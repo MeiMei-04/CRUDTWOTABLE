@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Edit Product</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Product</h2>
+        <form th:action="@{/product/update/{id} (id = ${product.id})}" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required th:value="${product.name}">
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" class="form-control" id="price" name="price" required th:value="${product.price}">
+            </div>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select class="form-select" aria-label="Default select example" name="id_category">
+                    <option th:each="x : ${categorys}" th:value="${x.id}" th:text="${x.name}" th:selected="${x.id == product.id_category}"></option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>
