@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Product List</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Name Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="x : ${products}">
+                    <td th:text="${x.id}"></td>
+                    <td th:text="${x.name}"></td>
+                    <td th:text="${x.price}"></td>
+                    <td th:text="${x.nameCategory}"></td>
+                    <!--<td><a th:href="@{'/products/edit/' + ${product.id}}" class="btn btn-primary">Edit</a></td>-->
+                </tr>
+            </tbody>
+        </table>
+        <a href="/products/add" class="btn btn-primary">Add New Product</a>
+    </div>
+</body>
+</html>
