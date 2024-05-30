@@ -22,8 +22,8 @@
                         <td th:text="${x.name}"></td>
                         <td th:text="${x.price}"></td>
                         <td th:text="${x.nameCategory}"></td>
-                        <td><a th:href="@{/product/edit/{id} (id = ${x.id})}" class="btn btn-primary">Edit</a>
-                            <a th:href="@{/product/delete/{id} (id = ${x.id})}" class="btn btn-primary">Delete</a></td>
+                        <td><a th:href="@{/product/edit/{id} (id = ${x.id})}" class="btn btn-danger">Edit</a>
+                            <a th:href="@{/product/delete/{id} (id = ${x.id})}" class="btn btn-warning">Delete</a></td>
 
                     </tr>
                 </tbody>

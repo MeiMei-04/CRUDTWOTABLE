@@ -8,6 +8,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Null;
 
 /**
  *
@@ -18,8 +21,11 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "Name Can Not Null")
     private String name;
+    @Min(value = 1,message = "Price Min 1")
     private double price;
+    @Min(value = 1,message = "Price Min 1")
     private Long id_category;
 
     public Product(Long id, String name, double price, Long id_category) {
