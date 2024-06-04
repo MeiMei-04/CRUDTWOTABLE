@@ -24,10 +24,13 @@
                     <a href="https://www.linkedin.com/signup" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>hoặc sử dụng tài khoản mật khẩu để đăng ký</span>
-                <input type="text" placeholder="Name" />
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
+                <input type="text" placeholder="Name" name="taikhoan" />
+                <input type="text" placeholder="Username" name="matkhau"/>
+                <input type="password" placeholder="Password" name="matkhauxacnhan"/>
                 <button>Đăng Ký</button>
+                <div th:if="${textFail != null}">
+                    <span th:text="${textFail}"></span>
+                </div>
             </form>
         </div>
         <div class="form-container sign-in">
